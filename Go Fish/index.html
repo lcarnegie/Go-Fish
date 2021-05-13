@@ -1,0 +1,77 @@
+<html>
+	<title>
+		Go Fish
+	</title>
+<head>
+	<script src='goFish.js'></script>
+	<link rel="stylesheet" href="goFish.css">
+</head>
+<body onload="loadImages()">
+<h1 id="header">Go Fish</h1>
+<div id="scoreboard">
+<p id="score-head">Scoreboard</p>
+<br>
+<p>Player 1 (You): <span id="p1score" class="scores"></span></p>
+<br><br>
+<p>CPU 1 (Left): <span id="p2score" class="scores"></span></p>
+<br><br>
+<p>CPU 2 (Top): <span id="p3score" class="scores"></span></p>
+<br><br>
+<p>CPU 3 (Right): <span id="p4score" class="scores"></span></p>
+</div>
+<div id="game" style="float: left; width: 70%; text-align: center;">
+<canvas id="myCanvas" width="800" height="600" style="border:1px solid #686868;">
+Some ting went wong
+</canvas>
+<br><br>
+<div id="playerselection">
+<span>No. of Players</span>
+<select id="numPlayers">
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select>
+<input id='start' type='button' value='Click to play' onclick="load()">
+</div>
+<br>
+<div id="UI">
+<select id="playerSelector" hidden disabled>
+	<option value="1">CPU 1</option>
+	<option value="2">CPU 2</option>
+	<option value="3">CPU 3</option>
+</select>
+<select id="cardSelector" hidden disabled>
+	<option value="A">A</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="0">10</option>
+	<option value="J">J</option>
+	<option value="Q">Q</option>
+	<option value="K">K</option>
+</select>
+<input id='finishTurn' type='button' value='Go!' onclick="getInput()" hidden disabled>
+</div>
+</div>
+<div id="rules">
+	<p>
+		The Rules:
+		<br>
+		<br>
+		1. 5 cards are dealt to each player (a group of 2, 3 or 4 people). <br> <br>
+		2. Before starting the game, all of the players put any pairs they happen to have in their hand down and earn a point for each pair. <br><br>
+		3. Starting with the first player and moving clockwise, the player asks one of their opponents "Do you have a ____ ?"  The card requested should be one the player has in their hand. <br><br>
+		4. If the opponent has the card, they must give it to the player who earns a point for making a match.  If the opponent does not have the card they say "Go Fish!" <br>The player must then pick a single card from the messed up, face down pile of cards.  <br><br>
+		5. The game is won when one person gets 10 points.
+	
+	</p>
+</div>
+
+
+</body>
+</html>
